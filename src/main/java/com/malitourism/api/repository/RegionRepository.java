@@ -17,5 +17,11 @@ public interface RegionRepository extends JpaRepository<Region, Long> {
             "where region.id=population.region_id AND region.pays_id=pays.id AND nom=?",nativeQuery=true)
     List<Object[]> getRegionsAvecPays(String nom);
 
+    @Query(value = "SELECT * FROM `region` WHERE region.pays_id=:paysId ORDER BY region.id DESC;",
+            nativeQuery = true)
+    List<Object> afficherParId(int paysId);
+
+
+
 
 }

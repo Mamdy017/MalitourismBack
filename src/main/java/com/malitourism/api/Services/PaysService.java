@@ -16,5 +16,6 @@ public interface PaysService {
 
     String supprimer(Long Id);
 
-    Optional<Pays> paysParId(Long id);
+    Pays paysParId(Long id);
+
 }

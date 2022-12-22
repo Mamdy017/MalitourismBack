@@ -43,7 +43,7 @@ public class PaysServiceImpl implements PaysService {
     }
 
     @Override
-    public Optional<Pays> paysParId(Long id) {
-        return paysRepository.findById(id);
+    public Pays paysParId(Long id) {
+        return paysRepository.findById(id).get();
     }
 }

@@ -21,9 +21,10 @@ public class Commentaire {
 
     private String commentaire ;
 
-    @ManyToOne
-    User utilisateur;
+
     @ManyToOne
     Region region;
+    @ManyToOne
+    User user;
 
 }

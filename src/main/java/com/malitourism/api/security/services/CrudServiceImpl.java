@@ -44,4 +44,9 @@ public class CrudServiceImpl implements CrudService {
         return repositoryUsers.findAll();
     }
 
+    @Override
+    public User userParId(Long idusers) {
+        return repositoryUsers.findById(idusers).get();
+    }
+
 }

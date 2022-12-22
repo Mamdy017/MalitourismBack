@@ -1,5 +1,6 @@
 package com.malitourism.api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,8 +24,7 @@ public class Pays {
     private String capital;
     private String drapeau;
     private String sperficie;
-    @OneToMany (mappedBy = "pays")
-    List<Region> regions;
+
 
     public Pays(long idPays) {
         this.Id = idPays;

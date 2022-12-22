@@ -11,6 +11,10 @@ public interface CrudService {
 
     String Modifier(User users);   // LA METHODE PERMETTANT DE MODIFIER UN COLLABORATEUR
 
-    List<User> Afficher();       // LA METHODE PERMETTANT D'AFFICHER UN COLLABORATEUR
+    List<User> Afficher();
+
+    // LA METHODE PERMETTANT D'AFFICHER UN COLLABORATEUR
+
+    User userParId(Long idusers);
 
 }

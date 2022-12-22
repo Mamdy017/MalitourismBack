@@ -1,32 +1,40 @@
 package com.malitourism.api.payload.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class JwtResponse {
   private String token;
   private String type = "Bearer";
- // private Long id;
+ private Long id;
   private String username;
   private String email;
-  //private List<String> roles;
+  private List<String> roles;
 
- /* public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
+  public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
     this.token = accessToken;
     this.id = id;
     this.username = username;
     this.email = email;
     this.roles = roles;
-  }*/
+  }
 
   public JwtResponse(String accessToken,  String username, String email) {
     this.token = accessToken;
-    //this.id = id;
+    this.id = id;
     this.username = username;
     this.email = email;
-   // this.roles = roles;
+    this.roles = roles;
   }
 
-  public String getAccessToken() {
+
+    public String getAccessToken() {
     return token;
   }
 
@@ -42,13 +50,13 @@ public class JwtResponse {
     this.type = tokenType;
   }
 
- /* public Long getId() {
+  public Long getId() {
     return id;
   }
 
   public void setId(Long id) {
     this.id = id;
-  }*/
+  }
 
   public String getEmail() {
     return email;
@@ -66,7 +74,7 @@ public class JwtResponse {
     this.username = username;
   }
 
- /* public List<String> getRoles() {
+  public List<String> getRoles() {
     return roles;
-  }*/
+  }
 }

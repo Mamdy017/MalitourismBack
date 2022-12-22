@@ -31,6 +31,11 @@ public class RegionServiceImpl implements RegionService{
     }
 
     @Override
+    public List<Object> afficherParId(int paysId) {
+        return regionRepository.afficherParId(paysId);
+    }
+
+    @Override
     public Region modifier(Long Id, Region region) {
         // TODO Auto-generated method stub
         return regionRepository.findById(Id)
@@ -48,6 +53,11 @@ public class RegionServiceImpl implements RegionService{
         // TODO Auto-generated method stub
         regionRepository.deleteById(Id);
         return "Region supprimée";
+    }
+
+    @Override
+    public Region regionParId(Long id) {
+        return regionRepository.findById(id).get();
     }
 
     public List<Object[]> getRegionsP() {

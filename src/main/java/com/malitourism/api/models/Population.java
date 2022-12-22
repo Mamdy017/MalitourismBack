@@ -10,14 +10,15 @@ import javax.persistence.*;
 @Entity
 @Table(name="population")
 @Data
+@NoArgsConstructor
 
 public class Population {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long Id ;
-    private int chiffre;
-    private int annee;
+    private String chiffre;
+    private String annee;
     private String langue;
 
     @ManyToOne

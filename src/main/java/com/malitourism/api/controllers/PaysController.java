@@ -30,11 +30,11 @@ public class PaysController {
 
     @ApiOperation(value = "Ajouter un pays")
     @PostMapping("/Creer")
-    public Object creer(@RequestBody Pays pays){
-        try{
+    public Object creer(@RequestBody Pays pays) {
+        try {
             return paysService.creer(pays);
-        }catch (Exception e){
-            return Message.ErreurReponse(" le Pays "+pays.getNom()+" existe déjà", HttpStatus.OK,null);
+        } catch (Exception e) {
+            return Message.ErreurReponse(" le Pays " + pays.getNom() + " existe déjà", HttpStatus.OK, null);
         }
 
     }
@@ -43,31 +43,29 @@ public class PaysController {
     @PostMapping("/ajout")
     public Object creer(@Param("nom") String nom, @Param("capital") String capital, @Param("superficie") String superficie,
                         @Param("file") MultipartFile file) throws IOException {
-        Pays pays= new Pays();
+        Pays pays = new Pays();
         String NomDrapeau = StringUtils.cleanPath(file.getOriginalFilename());
         pays.setNom(nom);
         pays.setCapital(capital);
         pays.setSperficie(superficie);
         pays.setDrapeau(NomDrapeau);
-        String uploDirPays ="C:\\Users\\mccamara\\Desktop\\MaliTourist\\Nouveau dossier\\Scucom\\src\\main\\resources\\image";
+        String uploDirPays = "C:\\Users\\mccamara\\Desktop\\MaliTourist\\MaliTourist\\src\\assets\\mesimages";
         image.saveimg(uploDirPays, NomDrapeau, file);
         return paysService.creer(pays);
 
     }
 
-
     @ApiOperation(value = "La liste des pays")
     @GetMapping("/liste")
-    public List<Pays> list(){
+    public List<Pays> list() {
         return paysService.lire();
     }
 
 
-
     @ApiOperation(value = "Modifier un peu")
     @PutMapping("/modifier/{Id}")
-    public Pays Modifier(@PathVariable Long Id,Pays pays) {
-        return paysService.modifier( Id,pays);
+    public Pays Modifier(@PathVariable Long Id, Pays pays) {
+        return paysService.modifier(Id, pays);
     }
 
     @ApiOperation(value = "Supprimer un pays")
@@ -79,7 +77,7 @@ public class PaysController {
 
     @ApiOperation(value = "recuperer un pays par son id")
     @GetMapping("/{id}")
-    Optional<Pays> paysParId(@PathVariable Long id){
-        return  paysService.paysParId(id);
+    Pays paysParId(@PathVariable Long id) {
+        return paysService.paysParId(id);
     }
 }
