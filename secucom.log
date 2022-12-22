@@ -11815,3 +11815,4 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'malit.user_roles' doesn't ex
 2022-12-22 16:19:23.874  INFO 4300 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
 2022-12-22 16:25:32.863  INFO 4300 --- [http-nio-8080-exec-5] c.m.api.controllers.AuthController       : Le collaborateur mamdy018 vient de se connecter
 2022-12-22 16:26:24.540  INFO 4300 --- [http-nio-8080-exec-2] c.m.api.controllers.AuthController       : Le collaborateur mamdy018 vient de se connecter
+2022-12-22 17:05:15.732  INFO 4300 --- [http-nio-8080-exec-9] c.m.api.controllers.AuthController       : Le collaborateur mamdy018 vient de se connecter
