@@ -46,4 +46,9 @@ public class PopulationServiceImpl implements PopulationService {
         return "Population supprimée";
     }
 
+    @Override
+    public List<Object> afficherParId(int regionId) {
+        return populationRepository.afficherParId(regionId);
+    }
+
 }

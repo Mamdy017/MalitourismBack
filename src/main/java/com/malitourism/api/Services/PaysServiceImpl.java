@@ -46,4 +46,14 @@ public class PaysServiceImpl implements PaysService {
     public Pays paysParId(Long id) {
         return paysRepository.findById(id).get();
     }
+
+    @Override
+    public Object getAllSuperficie() {
+        return paysRepository.getTotalSuperficie();
+    }
+
+    @Override
+    public Object getTotalsPop() {
+        return paysRepository.getTotalsPop();
+    }
 }

@@ -10,4 +10,5 @@ public interface PopulationService {
     List<Population> lire();
     Population modifier(Long Id, Population population);
     String supprimer(Long Id);
+    List<Object> afficherParId(int regionId);
 }

@@ -57,4 +57,11 @@ public class PopulationController {
     }
 
 
+    @GetMapping("/afficherParId/{regionId}")
+    List<Object> afficherParId ( @PathVariable int regionId){
+        return populationService.afficherParId(regionId);
+
+    }
+
+
 }

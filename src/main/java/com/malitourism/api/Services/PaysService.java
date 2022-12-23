@@ -18,4 +18,7 @@ public interface PaysService {
 
     Pays paysParId(Long id);
 
+    Object getAllSuperficie();
+
+    Object getTotalsPop();
 }

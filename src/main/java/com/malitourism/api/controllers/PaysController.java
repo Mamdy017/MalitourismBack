@@ -38,6 +38,18 @@ public class PaysController {
         }
 
     }
+    //Controller qui retourne la superficie total des pays
+    @ApiOperation(value = "Controller qui retourne la superficie total des pays")
+    @GetMapping("/allsuperficie")
+    public Object getAllSuperficie() {
+        return paysService.getAllSuperficie();
+    }
+
+    @ApiOperation(value = "Controller qui retourne la superficie total des pays")
+    @GetMapping("/totalPop")
+    public Object totalPo() {
+        return paysService.getTotalsPop();
+    }
 
     @ApiOperation(value = "Ajouter2 un pays")
     @PostMapping("/ajout")
@@ -49,7 +61,7 @@ public class PaysController {
         pays.setCapital(capital);
         pays.setSperficie(superficie);
         pays.setDrapeau(NomDrapeau);
-        String uploDirPays = "C:\\Users\\Camara\\Desktop\\Nouveau dossier (2)\\MaliTourist\\src\\assets\\mesimages";
+        String uploDirPays = "C:\\Users\\mccamara\\Desktop\\MaliTourist\\MaliTourist\\src\\assets\\mesimages";
         image.saveimg(uploDirPays, NomDrapeau, file);
         return paysService.creer(pays);
 

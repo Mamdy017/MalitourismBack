@@ -8,7 +8,9 @@ import java.util.List;
 
 public interface PopulationRepository extends JpaRepository<Population,Long> {
 
-
+    @Query(value = "SELECT * FROM `population` WHERE region.pays_id=:regionId;",
+            nativeQuery = true)
+    List<Object> afficherParId(int regionId);
 
 
 }
