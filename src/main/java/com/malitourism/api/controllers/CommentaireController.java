@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @RestController
@@ -44,5 +45,13 @@ public class CommentaireController {
         com.setUser(user);
 
         return commentaireService.creer(com);
+    }
+
+
+
+    @GetMapping("/afficherParId/{idregion}/{iduser}")
+    List<Object> afficherParId (@PathVariable int idregion,@PathVariable int iduser){
+        return commentaireService.afficherParId(idregion,iduser);
+
     }
 }

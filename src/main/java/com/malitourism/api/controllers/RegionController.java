@@ -61,7 +61,7 @@ public class RegionController {
         region.setImg1(image1);
         region.setImg2(image2);
         region.setImg3(image3);
-        String uploRegion = "C:\\Users\\mccamara\\Desktop\\MaliTourist\\MaliTourist\\src\\assets\\mesimages";
+        String uploRegion = "C:\\Users\\Camara\\Desktop\\Nouveau dossier (2)\\MaliTourist\\src\\assets\\mesimages";
         image.saveimgR(uploRegion, image1, img1);
         image.saveimgR(uploRegion, image2, img2);
         image.saveimgR(uploRegion, image3, img3);
